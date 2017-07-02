@@ -2,13 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-serverlist',
-  template: `
-    <ul>
-      Server list:<br/>
-      <li app-server></li>
-      <li app-server></li>
-    </ul>
-  `,
+  templateUrl: '/serverlist.component.html',
   styles: [`
     ul {
       background-color: #eee;
@@ -17,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
   `]
 })
 export class ServerlistComponent implements OnInit {
+
+  allowNewServers = false;
 
   constructor() { }
 
