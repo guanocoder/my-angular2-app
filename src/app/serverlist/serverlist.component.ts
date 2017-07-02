@@ -12,11 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerlistComponent implements OnInit {
 
-  allowNewServers = false;
+  allowNewServers: boolean = true;
+  currentState: string = "Server ready.";
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addServerClick() {
+    this.currentState = "Add Server Button Clicked!";
   }
 
 }

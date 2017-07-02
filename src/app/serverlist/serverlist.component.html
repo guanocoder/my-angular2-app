@@ -2,5 +2,6 @@
     Server list:<br/>
     <li app-server></li>
     <li app-server></li>
-    <button class="btn btn-primary" [disabled]="!allowNewServers">Add Server</button>
+    <button class="btn btn-primary" [disabled]="!allowNewServers" (click)="addServerClick()">Add Server</button>
+    <p>{{currentState}}</p>
 </ul>
