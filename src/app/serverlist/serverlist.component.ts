@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <ul>
       Server list:<br/>
-      <app-server></app-server>
-      <app-server></app-server>
+      <li app-server></li>
+      <li app-server></li>
     </ul>
   `,
   styles: [`
