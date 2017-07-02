@@ -2,6 +2,11 @@
     Server list:<br/>
     <li app-server></li>
     <li app-server></li>
+    <fieldset>
+        <label>Server Name</label>
+        <input type="text" class="form-control" (input)="onInputServerName($event)"
+            [(ngModel)]="serverName">
+    </fieldset>
     <button class="btn btn-primary" [disabled]="!allowNewServers" (click)="addServerClick()">Add Server</button>
     <p>{{currentState}}</p>
 </ul>
