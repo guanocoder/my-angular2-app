@@ -1,6 +1,8 @@
 <ul>
     Server list:<br/>
-    <li app-server *ngFor="let server of servers"></li>
+    <li *ngFor="let server of servers; let index = index;">
+        Server {{ index + 1 }} added.
+    </li>
     <fieldset>
         <label>Server Name</label>
         <input type="text" class="form-control" (input)="onInputServerName($event)"
