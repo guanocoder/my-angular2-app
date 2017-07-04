@@ -17,6 +17,11 @@ export class ServerlistComponent implements OnInit {
   serverName: string = "Chilelost";
   serverAdded: boolean = false;
 
+  servers: Array<string> = [
+    "SIT Web01",
+    "UAT Web01"
+  ]
+
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +29,7 @@ export class ServerlistComponent implements OnInit {
 
   addServerClick() {
     this.serverAdded = true;
+    this.servers.push(this.serverName);
   }
 
   onInputServerName(event: any) {

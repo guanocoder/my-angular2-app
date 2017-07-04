@@ -10,11 +10,13 @@ import { Component } from '@angular/core'
     `]
 })
 export class ServerComponent {
+    static nodeCount = 1;
     serverNodeIndex: number = 5;
     serverStatus: string = "offline";
 
     constructor() {
         this.serverStatus = Math.random() > .5 ? "online" : "offline";
+        this.serverNodeIndex = ServerComponent.nodeCount++;
     }
 
     getServerStatus() {
