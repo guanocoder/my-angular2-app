@@ -1,1 +1,4 @@
-Server {{ serverNodeIndex }} is {{ getServerStatus() }}!
+Server {{ serverNodeIndex }} is
+<span style="color: white;" [ngStyle]="{ backgroundColor: getColor() }">
+    &nbsp;{{ getServerStatus() }}
+</span>!
