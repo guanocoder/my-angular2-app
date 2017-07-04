@@ -15,6 +15,7 @@ export class ServerlistComponent implements OnInit {
   allowNewServers: boolean = true;
   currentState: string = "Server ready.";
   serverName: string = "Chilelost";
+  serverAdded: boolean = false;
 
   constructor() { }
 
@@ -22,7 +23,7 @@ export class ServerlistComponent implements OnInit {
   }
 
   addServerClick() {
-    this.currentState = "Add Server Button Clicked!";
+    this.serverAdded = true;
   }
 
   onInputServerName(event: any) {

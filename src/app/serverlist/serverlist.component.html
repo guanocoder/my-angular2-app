@@ -9,4 +9,5 @@
     </fieldset>
     <button class="btn btn-primary" [disabled]="!allowNewServers" (click)="addServerClick()">Add Server</button>
     <p>{{currentState}}</p>
+    <p *ngIf="serverAdded">Server {{serverName}} successfully added!</p>
 </ul>
