@@ -1,4 +1,6 @@
 Server {{ serverNodeIndex }} is
-<span style="color: white;" [ngStyle]="{ backgroundColor: getColor() }">
+<span
+    [ngStyle]="{ backgroundColor: getColor() }"
+    [ngClass]="{ offline: serverStatus == 'offline'}">
     &nbsp;{{ getServerStatus() }}
 </span>!

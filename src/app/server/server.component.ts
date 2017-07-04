@@ -2,7 +2,12 @@ import { Component } from '@angular/core'
 
 @Component({
     selector: "[app-server]",
-    templateUrl: "./server.component.html"
+    templateUrl: "./server.component.html",
+    styles: [`
+    span.offline {
+        color: white;
+    }
+    `]
 })
 export class ServerComponent {
     serverNodeIndex: number = 5;
@@ -19,7 +24,7 @@ export class ServerComponent {
     getColor() {
         switch(this.serverStatus) {
             case "online":
-                return "darkgreen";
+                return "lightgreen";
             case "offline":
                 return "maroon";
             default:
