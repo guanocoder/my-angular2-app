@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerModel } from "../models/server";
 
 @Component({
   selector: 'app-serverlist',
@@ -17,9 +18,9 @@ export class ServerlistComponent implements OnInit {
   serverName: string = "Chilelost";
   serverAdded: boolean = false;
 
-  servers: Array<string> = [
-    "SIT Web01",
-    "UAT Web01"
+  servers: Array<ServerModel> = [
+    new ServerModel("SIT Web01"),
+    new ServerModel("UAT Web01")
   ]
 
   constructor() { }
@@ -29,7 +30,7 @@ export class ServerlistComponent implements OnInit {
 
   addServerClick() {
     this.serverAdded = true;
-    this.servers.push(this.serverName);
+    this.servers.push(new ServerModel(this.serverName));
   }
 
   onInputServerName(event: any) {

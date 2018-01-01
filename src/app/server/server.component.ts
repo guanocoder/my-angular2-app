@@ -1,7 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { ServerModel } from '../models/server';
 
 @Component({
-    selector: "[app-server]",
+    selector: "app-server",
     templateUrl: "./server.component.html",
     styles: [`
     span.offline {
@@ -11,20 +12,18 @@ import { Component } from '@angular/core'
 })
 export class ServerComponent {
     static nodeCount = 1;
-    serverNodeIndex: number = 5;
-    serverStatus: string = "offline";
 
-    constructor() {
-        this.serverStatus = Math.random() > .5 ? "online" : "offline";
-        this.serverNodeIndex = ServerComponent.nodeCount++;
-    }
+    @Input()
+    public model: ServerModel;
+
+    constructor() {}
 
     getServerStatus() {
-        return this.serverStatus;
+        return this.model.status;
     }
 
     getColor() {
-        switch(this.serverStatus) {
+        switch(this.model.status) {
             case "online":
                 return "lightgreen";
             case "offline":

@@ -1,6 +1,6 @@
-Server {{ serverNodeIndex }} is
+Server {{ model.name }} is
 <span
     [ngStyle]="{ backgroundColor: getColor() }"
-    [ngClass]="{ offline: serverStatus == 'offline'}">
+    [ngClass]="{ offline: model.status == 'offline'}">
     &nbsp;{{ getServerStatus() }}
 </span>!

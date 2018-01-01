@@ -1,7 +1,7 @@
 <ul>
     Server list:<br/>
     <li *ngFor="let server of servers; let index = index;">
-        Server {{ index + 1 }} added.
+        <app-server [model]="server"></app-server>
     </li>
     <fieldset>
         <label>Server Name</label>
