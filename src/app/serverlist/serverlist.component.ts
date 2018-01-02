@@ -15,7 +15,6 @@ export class ServerlistComponent implements OnInit {
 
   allowNewServers: boolean = true;
   currentState: string = "Server ready.";
-  serverName: string = "Chilelost";
   serverAdded: boolean = false;
 
   servers: Array<ServerModel> = [
@@ -28,13 +27,15 @@ export class ServerlistComponent implements OnInit {
   ngOnInit() {
   }
 
-  addServerClick() {
+  onServerAdded(model: ServerModel) {
     this.serverAdded = true;
-    this.servers.push(new ServerModel(this.serverName));
+    this.servers.push(model);
+    if(this.servers.length >= 10)
+      this.allowNewServers = false;
   }
 
-  onInputServerName(event: any) {
-    this.currentState = `User input is: ${this.serverName}`;
+  onServerNameInput(nameString: string) {
+    this.currentState = `User input is: ${nameString}`;
   }
 
 }

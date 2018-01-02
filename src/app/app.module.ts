@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServerlistComponent } from './serverlist/serverlist.component';
+import { ServeraddComponent } from './serveradd/serveradd.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServerlistComponent
+    ServerlistComponent,
+    ServeraddComponent
   ],
   imports: [
     BrowserModule,
