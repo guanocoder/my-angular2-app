@@ -1,3 +1,8 @@
+<div class="row">
+    <div class="col-xs-12">
+        <ng-content></ng-content>
+    </div>
+</div>
 <div class="row" *ngFor="let server of servers; let index = index;">
     <app-server [model]="server"></app-server>
 </div>
@@ -6,7 +11,11 @@
     <app-serveradd (on-server-add)="onServerAdded($event)" (on-input)="onServerNameInput($event)" [allow-add]="allowNewServers"></app-serveradd>
 </div>
 
-<p *ngIf="serverAdded; else noServerAdded">Server {{serverName}} successfully added!</p>
+<ng-template [ngIf]="serverAdded" [ngIfElse]="noServerAdded">
+    <p>
+        Server {{serverName}} successfully added!
+    </p>
+</ng-template>
 <ng-template #noServerAdded>
     <p>{{currentState}}</p>
 </ng-template>
