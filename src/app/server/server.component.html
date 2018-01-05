@@ -1,10 +1,18 @@
-<div class="col-xs-8">
-    Server: {{ model.name }}
+<div class="col-xs-6">
+    <div class="alert" [ngClass]="model.status == 'offline' ? 'alert-danger' : 'alert-success'">
+        Server: <strong>{{ model.name }}</strong>
+    </div>    
 </div>
 <div class="col-xs-4">
-    <span
+    <div class="alert alert-default"
         [ngStyle]="{ backgroundColor: getColor() }"
         [ngClass]="{ offline: model.status == 'offline'}">
-        {{ getServerStatus() }}
-    </span>
+        <strong>{{ getServerStatus() }}</strong>
+    </div>
+</div>
+<div class="col-xs-1">
+    <button class="btn btn-danger" [disabled]="model.status != 'online'" (click)="switchOff()">Off</button>
+</div>
+<div class="col-xs-1">
+    <button class="btn btn-success" [disabled]="model.status == 'online'"  (click)="switchOn()">On</button>
 </div>

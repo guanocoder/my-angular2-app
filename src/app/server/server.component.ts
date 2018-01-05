@@ -5,7 +5,7 @@ import { ServerModel } from '../models/server';
     selector: "app-server",
     templateUrl: "./server.component.html",
     styles: [`
-    span.offline {
+    div.offline {
         color: white;
     }
     `]
@@ -31,5 +31,13 @@ export class ServerComponent {
             default:
                 return "white";
         }
+    }
+
+    switchOn() {
+        this.model.status = "online";
+    }
+
+    switchOff() {
+        this.model.status = "offline";
     }
 }
